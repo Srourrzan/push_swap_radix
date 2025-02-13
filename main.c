@@ -6,7 +6,7 @@
 /*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:29:52 by rsrour            #+#    #+#             */
-/*   Updated: 2025/01/08 23:25:01 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/13 21:08:46 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
+	t_info	*info_a;
+	//t_info	*info_b;
 	int		counter;
 	
 	counter = 0;
@@ -28,7 +30,9 @@ int	main(int argc, char **argv)
 	if (fd > 0)
 	{
 		ft_fill_stack(&stack_a, argv, argc, fd);
-		counter = ft_sort_list(&stack_a, &stack_b, counter, fd);
+		info_a = ft_stack_info(stack_a);
+		//counter = ft_sort_list(&stack_a, &stack_b, counter, fd);
+		printf("info_a->size = %d\n", info_a->size);
 		printf("number of ops: %d\n", counter);
 	}
 	else

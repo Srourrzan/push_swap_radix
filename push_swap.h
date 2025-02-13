@@ -6,7 +6,7 @@
 /*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:29:58 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/13 13:20:54 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/13 21:09:32 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ typedef struct s_list
 	int				content;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct	s_info
+{
+	t_list			*head;
+	int				size;
+}					t_info;
 
 typedef struct	s_status
 {
@@ -76,10 +82,12 @@ int					ft_descend_check(t_list **b);
 int					ft_sort_list_ascend(t_list **a, t_list **b, int counter, int fd);
 int					ft_sort_list_descend(t_list **b, t_list **a, int counter, int fd);
 
-int    ft_split_stack(t_list **stack_a, int counter, int fd);
-t_list    *ft_merge_stack(t_list **stack_1, t_list **stack_2, int fd);
+t_info  			*ft_stack_info(t_list *stack);
 
-//divide methods
-int 	ft_ascend_rr_splited_stack(t_list **head, t_list **midd, int counter, int fd);
+// int    ft_split_stack(t_list **stack_a, int counter, int fd);
+// t_list    *ft_merge_stack(t_list **stack_1, t_list **stack_2, int fd);
+
+// //divide methods
+// int 	ft_ascend_rr_splited_stack(t_list **head, t_list **midd, int counter, int fd);
 
 #endif
