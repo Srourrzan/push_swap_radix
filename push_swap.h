@@ -6,7 +6,7 @@
 /*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:29:58 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/13 23:58:04 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/14 18:03:46 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,14 @@ int					ft_strlen(const char *s);
 void				ft_init_array(char **src, int size);
 void    			ft_free_str_array(char **arr);
 
-void				ft_sort_list(t_info **a_info, t_list **b, int fd);
+void				ft_sort_list(t_info *a_info, t_list **b, int fd);
 int					ft_ascend_check(t_list  **a);
-int					ft_descend_check(t_list **b);
-int					ft_sort_list_ascend(t_list **a, t_list **b, int counter, int fd);
-int					ft_sort_list_descend(t_list **b, t_list **a, int counter, int fd);
+// int					ft_descend_check(t_list **b);
+// int					ft_sort_list_ascend(t_list **a, t_list **b, int counter, int fd);
+// int					ft_sort_list_descend(t_list **b, t_list **a, int counter, int fd);
 
 t_info  			*ft_stack_info(t_list *stack);
+void				ft_three_sort(t_info *a_info);
 
 // int    ft_split_stack(t_list **stack_a, int counter, int fd);
 // t_list    *ft_merge_stack(t_list **stack_1, t_list **stack_2, int fd);
