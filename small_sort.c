@@ -6,7 +6,7 @@
 /*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:02:00 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/14 20:26:06 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/14 20:56:19 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,18 @@ void	ft_three_sort(t_info *a_info)
         ft_putstr("defined\n", 1);
         ft_three_stack_conditions(a_info, first, second, third);
     }
+}
+
+void    ft_five_sort(t_info *a_info, t_list **b)
+{
+    int     size;
+    
+    size = a_info->size;
+    while (a_info->size > 3)
+    {
+        ft_move_min_to_top(a_info, size);
+        push(&(a_info->head), b);
+        ft_putstr("pb\n", 1);
+    }
+    
 }
