@@ -6,7 +6,7 @@
 /*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:49:02 by rsrour            #+#    #+#             */
-/*   Updated: 2025/01/04 14:43:43 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/14 23:32:12 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,35 @@ int     ft_is_number(char *src)
         iter++;
     }
     return (1);
+}
+int    ft_find_min_index(t_list **root)
+{
+    t_list  *curr;
+    int     min;
+    int     iter;
+    int     index;
+
+    curr = *root;
+    min = curr->content;
+    index = 0;
+    iter = 0;
+    while(curr)
+    {
+        if (curr->content < min)
+        {
+            min = curr->content;
+            index = iter;
+        }
+        iter++;
+        curr = curr->next;
+    }
+    return (index);
+}
+
+void    ft_move_min_to_top(t_info *a_info, int size)
+{
+    int     index;
+
+    index = ft_find_min_index(&(a_info->head));
+    printf("min valud pos = %d, size = %d\n", index, size);
 }
