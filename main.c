@@ -6,7 +6,7 @@
 /*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:29:52 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/13 21:08:46 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/13 23:58:24 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 	{
 		ft_fill_stack(&stack_a, argv, argc, fd);
 		info_a = ft_stack_info(stack_a);
-		//counter = ft_sort_list(&stack_a, &stack_b, counter, fd);
+		ft_sort_list(&info_a, &stack_b, fd);
 		printf("info_a->size = %d\n", info_a->size);
 		printf("number of ops: %d\n", counter);
 	}
