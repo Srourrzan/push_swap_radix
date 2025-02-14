@@ -6,7 +6,7 @@
 /*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:49:02 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/14 23:32:12 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/15 00:01:09 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,19 @@ void    ft_move_min_to_top(t_info *a_info, int size)
     int     index;
 
     index = ft_find_min_index(&(a_info->head));
-    printf("min valud pos = %d, size = %d\n", index, size);
+    while (index > 0)
+    {
+        if (index <= size / 2)
+        {
+            rotate(&(a_info->head));
+            ft_putstr("ra\n", 1);
+        }
+        else
+        {
+            reverse_rotate(&(a_info->head));
+            ft_putstr("ra\n", 1);
+        }
+        index = ft_find_min_index(&(a_info->head));
+    }
+    ft_display_stack(&(a_info->head), 'a', 1);
 }
