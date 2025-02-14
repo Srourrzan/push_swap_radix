@@ -6,7 +6,7 @@
 /*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:02:00 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/14 18:06:39 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/14 20:26:06 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,50 @@ void    ft_sort_two(t_info *a_info)
     ft_display_stack(&(a_info->head), 'a', 1);
 }
 
+void    ft_three_stack_conditions(t_info *a_info, int n1, int n2, int n3)
+{
+    if (n1 < n2 && n2 > n3)
+    {
+        reverse_rotate(&(a_info->head));
+        ft_putstr("rra\n", 1);
+        if (n1 < n3)
+        {
+            swap(&(a_info->head));
+            ft_putstr("sa\n", 1);
+        }
+    }
+    else if (n1 > n2 && n1 > n3)
+    {
+        rotate(&(a_info->head));
+        ft_putstr("ra\n", 1);
+        if (n2 > n3)
+        {
+            swap(&(a_info->head));
+            ft_putstr("sa\n", 1);   
+        }
+    }
+    else if (n1 > n2 && n1 < n3)
+    {
+        swap(&(a_info->head));
+        ft_putstr("sa\n", 1);  
+    }
+}
+
 void	ft_three_sort(t_info *a_info)
 {
+    int     first;
+    int     second;
+    int     third;
+    
+    
 	if (a_info->size == 2)
 		ft_sort_two(a_info);
+    else
+    {
+        first = a_info->head->content;
+        second = a_info->head->next->content;
+        third = a_info->head->next->next->content;
+        ft_putstr("defined\n", 1);
+        ft_three_stack_conditions(a_info, first, second, third);
+    }
 }
