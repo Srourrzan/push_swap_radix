@@ -6,7 +6,7 @@
 /*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 07:04:11 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/16 02:10:40 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/16 02:34:43 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void    ft_assign_index(t_list **root)
 	}
 }
 
-int     ft_max_index(t_list **root)
+static  int     ft_max_index(t_list **root)
 {
     t_list      *curr;
     int         max;
@@ -61,13 +61,25 @@ int     ft_max_index(t_list **root)
     return (max);
 }
 
+static  int     ft_max_bits(int index)
+{
+    int     bits;
+
+    bits = 0;
+    while ((index - 1) >> bits)
+        bits++;
+    return (bits);
+}
+
 void    ft_large_sort(t_info *a_info, t_list **b)
 {
     int     max_bits;
+    int     max_index;
     //int     iter;
 
     ft_assign_index(&(a_info->head));
-    max_bits = ft_max_index(&(a_info->head));
-    printf("max index = %d\n", max_bits);
+    max_index = ft_max_index(&(a_info->head));
+    max_bits = ft_max_bits(max_index);
+    printf("max bit = %d\n", max_bits);
     push(&(a_info->head), b);
 }
