@@ -6,7 +6,7 @@
 /*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 07:04:11 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/16 01:50:02 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/16 01:55:53 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void    ft_assign_index(t_list **root)
         curr = curr->next;
     }
     curr = *root;
+    //create ft_index_display to display the indeces, and create a
+    // file for std display and a file for stack display
     while (curr != NULL)
 	{
 		ft_putnbr(curr->content, 1);
