@@ -2,7 +2,8 @@
 
 TARGET = push_swap
 SRCS = main.c linked_list.c str_util.c display_util.c std_util.c stack_util.c \
-		 swap_util.c push_util.c rotate_util.c sort_util.c info_util.c small_sort.c
+		 swap_util.c push_util.c rotate_util.c sort_util.c info_util.c small_sort.c \
+		 large_sort.c
 OBJ_DIR = obj
 
 OBJS = $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))

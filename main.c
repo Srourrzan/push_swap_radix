@@ -6,7 +6,7 @@
 /*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:29:52 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/14 23:42:41 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/15 07:09:54 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	main(int argc, char **argv)
 		printf("failed: file descriptor: %d\n", fd);
 	close(fd);
 	delete_list(&stack_a);
+	free(info_a);
 	//delete_list(&stack_b);
 	return (0);
 }

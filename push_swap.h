@@ -6,7 +6,7 @@
 /*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:29:58 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/14 23:30:58 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/15 07:40:38 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_list
 {
 	int				content;
+	int				index;
 	struct s_list	*next;
 }					t_list;
 
@@ -88,6 +89,8 @@ void    			ft_three_stack_conditions(t_info *a_info, int n1, int n2, int n3);
 void    			ft_five_sort(t_info *a_info, t_list **b);
 int    				ft_find_min_index(t_list **root);
 void    			ft_move_min_to_top(t_info *a_info, int size);
+
+void    ft_large_sort(t_info *a_info, t_list **b);
 
 // int    ft_split_stack(t_list **stack_a, int counter, int fd);
 // t_list    *ft_merge_stack(t_list **stack_1, t_list **stack_2, int fd);
