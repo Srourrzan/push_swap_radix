@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:49:02 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/16 12:38:22 by codespace        ###   ########.fr       */
+/*   Updated: 2025/02/16 14:16:42 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,25 @@ void    ft_fill_stack(t_list **root, char **numbers, int argc)
     {
         if (ft_is_number(numbers[iter]) && !ft_is_dup(dup_num, numbers[iter]))
         {
-            dup_num[dup_iter++] = ft_strdup(numbers[iter]);
+            dup_num[dup_iter] = ft_strdup(numbers[iter]);
+            if (!dup_num[dup_iter])
+            {
+                ft_free_str_array(dup_num); // Free dup_num before exiting
+                ft_exit(root, dup_num, 3);
+            }
             number = ft_atoi(numbers[iter++], root, dup_num);
-            insert_node_back(root, number);
+            if (!insert_node_back(root, number))  // Check return value
+            {
+                ft_free_str_array(dup_num);
+                ft_exit(root, dup_num, 3);
+            }
+            dup_iter++;
         }
         else
+        {
+            ft_free_str_array(dup_num); // Free dup_num before exiting
             ft_exit(root, dup_num, 1);
+        }
     }
     ft_free_str_array(dup_num);
 }
@@ -79,6 +92,7 @@ int     ft_is_number(char *src)
     }
     return (1);
 }
+
 int    ft_find_min_index(t_list **root)
 {
     t_list  *curr;

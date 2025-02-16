@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str_util.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 20:20:45 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/13 20:20:53 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/16 16:30:36 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char    *ft_strdup(const char *s)
 
     iter = 0;
     len = ft_strlen(s);
-    buff = malloc(sizeof(char *) * (len + 1));
+    buff = malloc(sizeof(char) * (len + 1));
     if(!buff)
         return NULL;
     while(s[iter] != '\0')

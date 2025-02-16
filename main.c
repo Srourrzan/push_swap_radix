@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:29:52 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/16 12:39:44 by codespace        ###   ########.fr       */
+/*   Updated: 2025/02/16 16:37:23 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,14 @@ int	main(int argc, char **argv)
 		return (0);
 	ft_fill_stack(&stack_a, argv, argc);
 	info_a = ft_stack_info(stack_a);
+	if (!info_a)
+    {
+        delete_list(&stack_a);
+        ft_exit(&stack_a, NULL, 3);  // Handle allocation failure
+    }
 	ft_sort_list(info_a, &stack_b);
-	delete_list(&stack_a);
 	free(info_a);
+	delete_list(&stack_a);
 	delete_list(&stack_b);
 	return (0);
 }

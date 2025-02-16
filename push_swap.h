@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:29:58 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/16 12:39:18 by codespace        ###   ########.fr       */
+/*   Updated: 2025/02/16 16:38:02 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct	s_status
 }				t_status;
 
 t_list				*create_node(int content);
-void				insert_node_back(t_list **root, int content);
+int					insert_node_back(t_list **root, int content);
 void				insert_node_front(t_list **root, int content);
 void				delete_list(t_list **root);
 void				ft_putchar(char ch, int fd);
