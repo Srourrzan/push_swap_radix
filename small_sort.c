@@ -6,7 +6,7 @@
 /*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:02:00 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/15 00:04:58 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/16 12:53:12 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,17 +75,12 @@ void    ft_five_sort(t_info *a_info, t_list **b)
     while (a_info->size > 3)
     {
         ft_move_min_to_top(a_info, size);
-        push(&(a_info->head), b);
-        ft_putstr("pb\n", 1);
-        ft_display_stacks(&(a_info->head), b, 1);
+        ft_ascend_push(&(a_info->head), b, 1);
         a_info->size = len_list(&(a_info->head));
     }
     ft_three_sort(a_info);
     ft_display_stacks(&(a_info->head), b, 1);
     while(*b)
-    {
-        push(b, &(a_info->head));
-        ft_putstr("pb\n", 1);
-    }
+        ft_descend_push(b, &(a_info->head), 1);
     ft_display_stacks(&(a_info->head), b, 1);
 }
