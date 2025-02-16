@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   linked_list.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:29:56 by rsrour            #+#    #+#             */
-/*   Updated: 2024/12/28 15:25:58 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/16 12:32:22 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,3 @@ void	delete_list(t_list **root)
 	}
 	*root = NULL;
 }
-
-// int	main()
-// {
-// 	t_list *root = NULL;
-// 	insert_node_back(&root, 6);
-// 	printf("root cont = %d\n", root->content);
-// 	return(0);
-// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_util.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:49:02 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/15 00:01:09 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/16 12:38:22 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 #include "push_swap.h"
 
-void    ft_fill_stack(t_list **root, char **numbers, int argc, int fd)
+void    ft_fill_stack(t_list **root, char **numbers, int argc)
 {
     int     iter;
     int     number;
@@ -44,7 +44,6 @@ void    ft_fill_stack(t_list **root, char **numbers, int argc, int fd)
             ft_exit(root, dup_num, 1);
     }
     ft_free_str_array(dup_num);
-    ft_display_stack(root, 'a', fd);
 }
 
 
@@ -123,5 +122,4 @@ void    ft_move_min_to_top(t_info *a_info, int size)
         }
         index = ft_find_min_index(&(a_info->head));
     }
-    ft_display_stack(&(a_info->head), 'a', 1);
 }

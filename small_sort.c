@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:02:00 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/16 11:06:08 by codespace        ###   ########.fr       */
+/*   Updated: 2025/02/16 12:36:28 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void    ft_sort_two(t_info *a_info)
 {
     swap(&(a_info->head));
     ft_putstr("sa\n", 1);
-    ft_display_stack(&(a_info->head), 'a', 1);
 }
 
 void    ft_three_stack_conditions(t_info *a_info, int n1, int n2, int n3)
@@ -79,8 +78,6 @@ void    ft_five_sort(t_info *a_info, t_list **b)
         a_info->size = len_list(&(a_info->head));
     }
     ft_three_sort(a_info);
-    ft_display_stacks(&(a_info->head), b, 1);
     while(*b)
         ft_descend_push(&(a_info->head), b, 1);
-    ft_display_stacks(&(a_info->head), b, 1);
 }

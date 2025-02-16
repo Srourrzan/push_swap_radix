@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:29:58 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/16 12:50:05 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/16 12:39:18 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
-# include <fcntl.h>
 
 typedef struct s_list
 {
@@ -43,11 +41,8 @@ void				insert_node_front(t_list **root, int content);
 void				delete_list(t_list **root);
 void				ft_putchar(char ch, int fd);
 void				ft_putnbr(int nbr, int fd);
-void				ft_display_stack(t_list **root, char name, int fd);
 void				ft_putstr(char *src, int fd);
-void				ft_display_stacks(t_list **a, t_list **b, int fd);
-void				ft_correct_space_display(t_list *node, int fd);
-void				ft_fill_stack(t_list **root, char **numbers, int argc, int fd);
+void				ft_fill_stack(t_list **root, char **numbers, int argc);
 
 void				swap(t_list **root);
 void				ss(t_list **root_a, t_list **root_b);
@@ -72,11 +67,8 @@ int					ft_strlen(const char *s);
 void				ft_init_array(char **src, int size);
 void    			ft_free_str_array(char **arr);
 
-void				ft_sort_list(t_info *a_info, t_list **b, int fd);
+void				ft_sort_list(t_info *a_info, t_list **b);
 int					ft_ascend_check(t_list  **a);
-// int					ft_descend_check(t_list **b);
-// int					ft_sort_list_ascend(t_list **a, t_list **b, int counter, int fd);
-// int					ft_sort_list_descend(t_list **b, t_list **a, int counter, int fd);
 
 t_info  			*ft_stack_info(t_list *stack);
 void				ft_three_sort(t_info *a_info);
@@ -85,12 +77,6 @@ void    			ft_five_sort(t_info *a_info, t_list **b);
 int    				ft_find_min_index(t_list **root);
 void    			ft_move_min_to_top(t_info *a_info, int size);
 
-void    ft_large_sort(t_info *a_info, t_list **b);
-
-// int    ft_split_stack(t_list **stack_a, int counter, int fd);
-// t_list    *ft_merge_stack(t_list **stack_1, t_list **stack_2, int fd);
-
-// //divide methods
-// int 	ft_ascend_rr_splited_stack(t_list **head, t_list **midd, int counter, int fd);
+void    			ft_large_sort(t_info *a_info, t_list **b);
 
 #endif
