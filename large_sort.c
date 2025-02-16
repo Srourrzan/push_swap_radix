@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   large_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 07:04:11 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/16 02:34:43 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/16 12:29:45 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,32 +33,6 @@ void    ft_assign_index(t_list **root)
         curr = curr->next;
     }
     curr = *root;
-    //create ft_index_display to display the indeces, and create a
-    // file for std display and a file for stack display
-    while (curr != NULL)
-	{
-		ft_putnbr(curr->content, 1);
-        ft_putstr(" : ", 1);
-        ft_putnbr(curr->index, 1);
-		ft_putchar('\n', 1);
-		curr = curr->next;
-	}
-}
-
-static  int     ft_max_index(t_list **root)
-{
-    t_list      *curr;
-    int         max;
-
-    curr = *root;
-    max = curr->index;
-    while(curr != NULL)
-    {
-        if (curr->index > max)
-            max = curr->index;
-        curr = curr->next;
-    }
-    return (max);
 }
 
 static  int     ft_max_bits(int index)
@@ -71,15 +45,43 @@ static  int     ft_max_bits(int index)
     return (bits);
 }
 
+static  void    ft_radix_sort_lsd(t_info *a_info, t_list **b, int bit)
+{
+    int     size;
+    int     iter;
+    int     num;
+
+    size = a_info->size;
+    iter = 0;
+    while (iter < size)
+    {
+        num = a_info->head->index;
+        if ((num >> bit) & 1)
+        {
+            rotate(&(a_info->head));
+            ft_putstr("ra\n", 1);
+        }
+        else
+            ft_ascend_push(&(a_info->head), b, 1);
+        iter++;
+    }
+}
+
 void    ft_large_sort(t_info *a_info, t_list **b)
 {
     int     max_bits;
     int     max_index;
-    //int     iter;
+    int     iter;
 
     ft_assign_index(&(a_info->head));
-    max_index = ft_max_index(&(a_info->head));
+    max_index = a_info->size - 1;
     max_bits = ft_max_bits(max_index);
-    printf("max bit = %d\n", max_bits);
-    push(&(a_info->head), b);
+    iter = 0;
+    while (iter < max_bits)
+    {
+        ft_radix_sort_lsd(a_info, b, iter);
+        while((*b) != NULL)
+            ft_descend_push(&(a_info->head), b, 1);
+        iter++;
+    }
 }
