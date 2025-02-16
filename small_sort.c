@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:02:00 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/16 12:53:12 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/16 11:06:08 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,6 @@ void    ft_five_sort(t_info *a_info, t_list **b)
     ft_three_sort(a_info);
     ft_display_stacks(&(a_info->head), b, 1);
     while(*b)
-        ft_descend_push(b, &(a_info->head), 1);
+        ft_descend_push(&(a_info->head), b, 1);
     ft_display_stacks(&(a_info->head), b, 1);
 }
